@@ -8,17 +8,6 @@ pd.set_option('display.width', 1000)
 pd.options.display.max_colwidth = 100
 pd.options.mode.chained_assignment = None
 
-#CPSC-51100, Statistical Programming, Spring 2017
-#Programming Assignment 7 – Aggregating ACS PUMS Data
-#Group 8 : Taylor Boss, George Vander Meulen, Sangeetha Verkot
-
-header ='''
-CPSC-51100, Statistical Programming, Spring 2017
-Group 8 : Taylor Boss, George Vander Meulen, Sangeetha Verkot
-Programming Assignment 7 – Aggregating ACS PUMS Data
-'''
-print header
-
 #Statistics of HINCP - Household income (past 12 months), grouped by HHT - Household/family type
 def householdIncomeByType(df):
     hht_description = { 1:'Married couple household',
@@ -86,7 +75,7 @@ def get_stats(group):
     return {'min': group.min(),'max': group.max(),
             'mean': group.mean(),'std':group.std(),'count':group.count()}
 def main():
-    pums = pd.read_csv('/Users/sverkot/projects/python_files/week6_assignment/ss13hil.csv')
+    pums = pd.read_csv('ss13hil.csv')
     df = DataFrame(pums)
     #Statistics of HINCP - Household income (past 12 months), grouped by HHT - Household/family type
     householdIncomeByType(df)
